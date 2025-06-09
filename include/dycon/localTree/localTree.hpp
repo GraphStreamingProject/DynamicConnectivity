@@ -31,6 +31,10 @@ private:
   }
 
 public:
+  uint32_t get_id() {
+    return vertex ? vertex->getID() : -1;
+  }
+
   static type_allocator<localTree> *l_alloc;
   localTree(uint32_t _id)
       : level(0), size(1), parent(nullptr), vertex(new leaf(_id, this)),
