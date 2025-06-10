@@ -24,17 +24,13 @@ private:
   uint32_t level;
   uint32_t size; // number of vertices incident to this cluster node.
   rankTree *parent;
-  leaf *vertex;
   std::bitset<64> edgemap;
   template <localTree *> static bool comp(localTree *x, localTree *y) {
     return x->size < y->size;
   }
 
 public:
-  uint32_t get_id() {
-    return vertex ? vertex->getID() : -1;
-  }
-
+  leaf *vertex;
   static type_allocator<localTree> *l_alloc;
   localTree(uint32_t _id)
       : level(0), size(1), parent(nullptr), vertex(new leaf(_id, this)),

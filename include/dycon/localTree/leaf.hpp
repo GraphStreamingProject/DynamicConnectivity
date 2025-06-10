@@ -25,6 +25,7 @@
 #define MAX_LEVEL 32
 class leaf {
 public:
+  std::vector<std::pair<uint32_t, edge_set *>> E;
   leaf(vertex _id = 0, void *p = nullptr)
       : parent(p), edgemap(0), size(0), id(_id) {
     E.clear();
@@ -49,7 +50,6 @@ public:
   static size_t getLeafSpace(leaf *node);
 
 private:
-  std::vector<std::pair<uint32_t, edge_set *>> E;
   void *parent;
   std::bitset<64> edgemap;
   vertex id;
