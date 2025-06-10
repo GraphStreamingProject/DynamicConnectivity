@@ -89,7 +89,7 @@ endif()
 
 
 FetchContent_Declare(abseil-cpp
-GIT_REPOSITORY git@github.com:abseil/abseil-cpp.git
+GIT_REPOSITORY https://github.com/abseil/abseil-cpp.git
 GIT_TAG master
 )
 FetchContent_MakeAvailable(abseil-cpp)
